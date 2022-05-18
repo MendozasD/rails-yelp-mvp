@@ -1,0 +1,13 @@
+<h1> Restaurants </h1>
+
+<ul class="list-group">
+  <% @restaurants.each do |r| %>
+    <li class="list-group-item">
+      <%= link_to r.name, restaurant_path(r) %> <br>
+      <%= r.address %> <br>
+      <span>Category: </span><%= r.category.capitalize %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create", new_path %>
